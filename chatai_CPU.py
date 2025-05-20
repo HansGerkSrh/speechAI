@@ -1,3 +1,4 @@
+###lokal testing###
 # import json
 # from scripts import convert_list_to_string
 
@@ -61,7 +62,7 @@ def summarize_text_gemma_3_4b(sysprompt,inputtext):
     return output
 
 
-
+###output for testing###
 
 # output = summarize_text_gemma_3_1b(sysprompt,input_text_for_chat_ai)
 
