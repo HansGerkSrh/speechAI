@@ -1,9 +1,9 @@
-import whisperx
+import whisperx #https://github.com/m-bain/whisperx
 import json
 
 def audio_to_text_with_diarization(audio_file, auth_token):
     device = "cpu"  
-    batch_size = 4  # reduce further if you're low on RAM
+    batch_size = 8  # reduce further if you're low on RAM
     compute_type = "float32"  
 
     # 1. Transcribe with whisper

@@ -8,7 +8,7 @@ path_to_audio = "Audio/Deutsch_Audio_02.mp3" #Loker Pfad zur Audiodatei
 path_to_token = ".token" #In File gespeicherter Read Token für huggingface
 
 #Prompt der an das System gegeben wird als "Aufgabe" was mit dem nachfolgenden Text zu tun ist 
-sys_prompt = "Du bekommst Dialoge zwischen mehreren Person, deren Start durch SPEAKER_XX gekenzeichnet ist. Fasse den Inhalt des Dialogs zusammen"
+sys_prompt = "Du bekommst Dialoge zwischen mehreren Person, deren Start jeweils durch SPEAKER_XX gekenzeichnet ist. Fasse den Inhalt des Dialogs zusammen"
 
 #define max lenght of new generated Text
 max_new_tokens = 500 

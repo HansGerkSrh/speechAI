@@ -1,13 +1,13 @@
 ###lokal testing###
-import json
-from scripts import convert_list_to_string
+# import json
+# from scripts import convert_list_to_string
 
-with open('output.json', 'r') as file:
-    converted_audio_list = json.load(file)
+# with open('output.json', 'r') as file:
+#     converted_audio_list = json.load(file)
 
-sysprompt = "Du bekommst Dialoge zwischen mehreren Person, deren Start durch SPEAKER_XX gekenzeichnet ist. Fasse den Inhalt des Dialogs zusammen"
-input_text_for_chat_ai = convert_list_to_string(converted_audio_list)
-max_new_tokens = 500
+# sysprompt = "Du bekommst Dialoge zwischen mehreren Person, deren Start durch SPEAKER_XX gekenzeichnet ist. Fasse den Inhalt des Dialogs zusammen"
+# input_text_for_chat_ai = convert_list_to_string(converted_audio_list)
+# max_new_tokens = 500
 
 
 def summarize_text_gemma_3_1b(sysprompt,inputtext,max_new_tokens):
@@ -50,7 +50,7 @@ def summarize_text_gemma_3_4b(sysprompt,inputtext,max_new_tokens):
         [
             {
                 "role": "system",
-                "content": [{"type": "text", "text": sysprompt },]
+                "content": [{"type": "text", "text": sysprompt},]
             },
             {
                 "role": "user",
@@ -65,10 +65,10 @@ def summarize_text_gemma_3_4b(sysprompt,inputtext,max_new_tokens):
 
 ###output for testing###
 
-output = summarize_text_gemma_3_4b(sysprompt,input_text_for_chat_ai,max_new_tokens)
+# output = summarize_text_gemma_3_4b(sysprompt,input_text_for_chat_ai,max_new_tokens)
 
-for i in output[0][0]["generated_text"]:
-    print(i)
-    print("")
+# for i in output[0][0]["generated_text"]:
+#     print(i)
+#     print("")
 
-print(output[0][0]["generated_text"][2]["content"])
+# print(output[0][0]["generated_text"][2]["content"])
