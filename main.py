@@ -1,9 +1,10 @@
 import json
 from audio_to_text import audio_to_text_with_diarization
 from scripts import *
-from chatai_CPU import summarize_text_gemma_3_1b
+from chatai_CPU import *
 
-path_to_audio = "Audio/Deutsch_Audio_02.mp3" #Loker Pfad zur Audiodatei
+#path_to_audio = "Audio/Deutsch_Audio_02.mp3" #Lokaler Pfad zur Audiodatei
+path_to_audio = "Audio/Sprachenlernen.mp3"
 
 path_to_token = ".token" #In File gespeicherter Read Token für huggingface
 
@@ -11,7 +12,7 @@ path_to_token = ".token" #In File gespeicherter Read Token für huggingface
 sys_prompt = "Du bekommst Dialoge zwischen mehreren Person, deren Start jeweils durch SPEAKER_XX gekenzeichnet ist. Fasse den Inhalt des Dialogs zusammen"
 
 #define max lenght of new generated Text
-max_new_tokens = 500 
+max_new_tokens = 2000 
 
 #lesen des Huggingface read Tokens zum initialen laden der libaries  
 with open(path_to_token,'r') as f: 
