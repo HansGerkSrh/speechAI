@@ -1,16 +1,20 @@
-import json
-from scripts import convert_list_to_string
-from transformers import AutoTokenizer, Gemma3ForCausalLM
-import torch
+### Testing input ###
 
-with open('output.json', 'r') as file:
-    converted_audio_list = json.load(file)
+# import json
+# from scripts import convert_list_to_string
 
-sysprompt = "Du bekommst Dialoge zwischen mehreren Personen, deren Start durch SPEAKER_XX gekennzeichnet ist. Fasse den Inhalt des Dialogs zusammen."
-input_text_for_chat_ai = convert_list_to_string(converted_audio_list)
-max_new_tokens = 500
+# with open('output.json', 'r') as file:
+#     converted_audio_list = json.load(file)
+
+# sysprompt = "Du bekommst Dialoge zwischen mehreren Personen, deren Start durch SPEAKER_XX gekennzeichnet ist. Fasse den Inhalt des Dialogs zusammen."
+# input_text_for_chat_ai = convert_list_to_string(converted_audio_list)
+# max_new_tokens = 500
+
 
 def summarize_text_gemma_3_1b(sysprompt, inputtext, max_new_tokens):
+    from transformers import AutoTokenizer, Gemma3ForCausalLM
+    import torch
+
     model_id = "google/gemma-3-1b-it"
 
     ### First Time Installation###
@@ -68,6 +72,6 @@ def chatbot_output_cleanup(decoded_output):
 
 ###output for testing###
 
-raw_output = summarize_text_gemma_3_1b(sysprompt,input_text_for_chat_ai,max_new_tokens)
-
-output = chatbot_output_cleanup(raw_output)
+# raw_output = summarize_text_gemma_3_1b(sysprompt,input_text_for_chat_ai,max_new_tokens)
+# output = chatbot_output_cleanup(raw_output)
+# print(output)
