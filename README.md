@@ -24,10 +24,12 @@ uv pip install "transformers[torch]"
 
 Install Torch 
 
+pip install whisperx
 
 
 
-
-create .token file 
+create .token file  #put huggingface read token inside and request acces to:
+     https://huggingface.co/pyannote/segmentation-3.0 and https://huggingface.co/pyannote/speaker-diarization-3.1
+     you can create the read token here: https://huggingface.co/security-checkup?cookieId=e8bbda46-f7cc-4656-a68f-bab7f724e21c
 create offload folder if run on CPU 
 create gemma-local folder or named else if its supposed to run offline 
