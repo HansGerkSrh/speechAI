@@ -9,11 +9,10 @@
 # input_text_for_chat_ai = convert_list_to_string(converted_audio_list)
 # max_new_tokens = 500
 
-
 def summarize_text_gemma_3_1b(sysprompt,inputtext,max_new_tokens):
     from transformers import pipeline
 
-    pipe = pipeline("text-generation", model="google/gemma-3-1b-it")
+    pipe = pipeline("text-generation", model="google/gemma-3-1b-it") #https://huggingface.co/google/gemma-3-1b-it
 
     messages = [
         [

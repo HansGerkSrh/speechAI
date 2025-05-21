@@ -173,8 +173,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+#project specific 
 .token
-
 offload
-
 test.txt
+gemma-local 
