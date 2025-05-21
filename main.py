@@ -3,16 +3,13 @@ from audio_to_text import audio_to_text_with_diarization
 from scripts import *
 from chatai_CPU import *
 
+
+### Audio transkription ###
+
 #path_to_audio = "Audio/Deutsch_Audio_02.mp3" #Lokaler Pfad zur Audiodatei
 path_to_audio = "Audio/Sprachenlernen.mp3"
 
 path_to_token = ".token" #In File gespeicherter Read Token für huggingface
-
-#Prompt der an das System gegeben wird als "Aufgabe" was mit dem nachfolgenden Text zu tun ist 
-sys_prompt = "Du bekommst Dialoge zwischen mehreren Person, deren Start jeweils durch SPEAKER_XX gekenzeichnet ist. Fasse den Inhalt des Dialogs zusammen"
-
-#define max lenght of new generated Text
-max_new_tokens = 2000 
 
 #lesen des Huggingface read Tokens zum initialen laden der libaries  
 with open(path_to_token,'r') as f: 
@@ -21,6 +18,15 @@ f.close()
 
 #gives to audio file to the transcription ai, which saves the transkript into a .json 
 audio_to_text_with_diarization(path_to_audio,token)
+
+
+### summarising transkript ###
+
+#Prompt der an das System gegeben wird als "Aufgabe" was mit dem nachfolgenden Text zu tun ist 
+sys_prompt = "Du bekommst Dialoge zwischen mehreren Person, deren Start jeweils durch SPEAKER_XX gekenzeichnet ist. Fasse den Inhalt des Dialogs zusammen"
+
+#define max lenght of new generated Text
+max_new_tokens = 2000 
 
 #open and read the saved audio log
 with open('output.json', 'r') as file:

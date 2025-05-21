@@ -29,24 +29,21 @@ def audio_to_text_with_diarization(audio_file, auth_token):
     #print(diarize_segments)
     full_converted_list = result["segments"]
     
-    with open('test.txt', 'w+') as file:
-        file.write(str(full_converted_list))
-        print('Succesfully printed to textfile')
+    # with open('test.txt', 'w+') as file:
+    #     file.write(str(full_converted_list))
+    #     print('Succesfully printed to textfile')
 
     #print(full_converted_list)
 
     returnlist = []
-    if 'speaker' in full_converted_list[0]:
-        for item in full_converted_list:
+    
+    for item in full_converted_list:
+        if 'speaker' in item:
             returnlist.append([item['text'],item['speaker']])
-    elif 'speaker' in full_converted_list[0]['words'][0]:
-        for item in full_converted_list:
-            for sentence in item['words']:
-                returnlist.append([sentence['word'],sentence['speaker']])
-    else:
-        for item in full_converted_list:
-            returnlist.append([item['text']])
+        else:
+            returnlist.append([item['text'],'unknown speaker'])
         
+            
 
     with open('output.json', 'w') as file:
         json.dump(returnlist, file) 
