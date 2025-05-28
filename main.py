@@ -6,8 +6,8 @@ from chatai_CPU import *
 """
 Beschreibung des Ablaufs 
 
-Nimmt Audiodatei und gewünschte Textlänge als Input
-wandelt in "audio_to_text.py" das Audiofile zu einem Transkript mit Speaker diarization um und speichert die ausgabe liste in output.json  
+main nimmt Audiodatei und gewünschte Textlänge als Input
+gibt datei an "audio_to_text.py", WhisperX wandelt das Audiofile zu einem Transkript mit Speaker diarization um und speichert die ausgabe liste in output.json  
 über die Funktion "convert_list_to_string" in scripts.py wird die Ausgabeliste in einen Menschen lesbaren String für die Textai umgewandelt
 "chatai_CPU.py" lässt Lokal Gemma3_1b laufen und fasst das eingegebene Textfile basierend auf den festgelegten systempromt zusammen 
 das Ergebniss davon wird an main zurückgegeben und in die Konsole geprinted
@@ -54,7 +54,7 @@ def main(path_to_audio,max_new_tokens = 600):
 
 
 #path_to_audio = "Audio/Deutsch_Audio_02.mp3" #Lokaler Pfad zur Audiodatei
-path_to_audio = "Audio/Sprachenlernen.mp3"
+path_to_audio = "Audio/Audio_1.mp3"
 
 #define max lenght of new generated Text
 max_new_tokens = 600 
