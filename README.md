@@ -1,9 +1,12 @@
+
+## Readme ist noch nicht fertig und muss noch verbessert werden 
+
 Pfad zur Audiodatei in main.py ändern und ausführen 
 
 Setup Guide
 
 
-Create and activate a virtual environment with venv or uv, a fast Rust-based Python package and project manager.
+Create and activate a virtual environment with venv or uv
 
 # venv
 python -m venv .my-env
@@ -22,9 +25,9 @@ pip install "transformers[torch]"
 uv pip install "transformers[torch]"
 
 
-Install Torch 
+- Install Torch 
 
-pip install whisperx
+- pip install whisperx
 
 
 
