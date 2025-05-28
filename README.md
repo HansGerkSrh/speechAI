@@ -1,5 +1,5 @@
 
-## Readme ist noch nicht fertig und muss noch verbessert werden 
+## Readme ist noch nicht fertig und muss noch verbessert werden eine Detailierte beschreibung des Ablaufs ist in main.py
 
 Pfad zur Audiodatei in main.py ändern und ausführen 
 

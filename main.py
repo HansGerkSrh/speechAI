@@ -3,6 +3,15 @@ from audio_to_text import audio_to_text_with_diarization
 from scripts import *
 from chatai_CPU import *
 
+"""
+Beschreibung des Ablaufs 
+
+Nimmt Audiodatei und gewünschte Textlänge als Input
+wandelt in "audio_to_text.py" das Audiofile zu einem Transkript mit Speaker diarization um und speichert die ausgabe liste in output.json  
+über die Funktion "convert_list_to_string" in scripts.py wird die Ausgabeliste in einen Menschen lesbaren String für die Textai umgewandelt
+"chatai_CPU.py" lässt Lokal Gemma3_1b laufen und fasst das eingegebene Textfile basierend auf den festgelegten systempromt zusammen 
+das Ergebniss davon wird an main zurückgegeben und in die Konsole geprinted
+"""
 
 def main(path_to_audio,max_new_tokens = 600):
     ### Audio transkription ###
@@ -22,8 +31,6 @@ def main(path_to_audio,max_new_tokens = 600):
 
     #Prompt der an das System gegeben wird als "Aufgabe" was mit dem nachfolgenden Text zu tun ist 
     sys_prompt = "Du bekommst Dialoge zwischen mehreren Person, deren Start jeweils durch SPEAKER_XX gekenzeichnet ist. Fasse den Inhalt des Dialogs zusammen"
-
-
 
     #open and read the saved audio log
     with open('output.json', 'r') as file:
@@ -50,6 +57,6 @@ def main(path_to_audio,max_new_tokens = 600):
 path_to_audio = "Audio/Sprachenlernen.mp3"
 
 #define max lenght of new generated Text
-max_new_tokens = 2000 
+max_new_tokens = 600 
 
 main(path_to_audio,max_new_tokens)
